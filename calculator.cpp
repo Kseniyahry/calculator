@@ -1,16 +1,30 @@
 #include "calculator.h"
 
-int Calculator::Add (double a, double b)
+double Calculator::Add (double a, double b)
 {
-	return a + b + 0.5;
+	return a + b;
 }
 
-int Calculator::Sub (double a, double b)
+double Calculator::Sub (double a, double b)
 {
     return Add (a, -b);
 }
 
-int Calculator::Mul (double a, double b)
+double Calculator::Mul (double a, double b)
 {
-    return a * b + 0.5;
+    return a * b;
+}
+
+double Calculator::Div (double a, double b)
+{
+    return a / b;
+}
+
+double Calculator::Pow (double base, int exp)
+{
+	double temp = 0;
+    for(int i = 0; i < exp; i++){
+		temp += Mul(base,base);
+	}
+	return temp;
 }
